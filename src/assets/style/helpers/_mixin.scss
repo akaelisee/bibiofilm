@@ -1,0 +1,6 @@
+@mixin hr ($width, $bgColorHr) {
+    background: $bgColorHr;
+    height: 2px;
+    border: none;
+    width: $width;
+}

@@ -1,0 +1,33 @@
+.logo__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        color: red;
+        font-size: 50px;
+    }
+
+    h2 {
+        margin-left: 15px;
+        font-size: $font-opensans;
+        font-size: 50px;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        color: red;
+        font-size: 50px;
+    }
+
+    h2 {
+        margin-left: 15px;
+        font-size: $font-opensans;
+        font-size: 50px;
+    }
+}

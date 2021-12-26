@@ -1,10 +1,11 @@
 import logo from './logo.svg';
-import './App.css';
+import './assets/style/index.scss';
+import LoadingHome from './components/loadingHome';
 
 function App() {
   return (
     <div className="App">
-       ici
+      <LoadingHome />
     </div>
   );
 }
