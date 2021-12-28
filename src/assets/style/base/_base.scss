@@ -3,6 +3,7 @@ html, body{
     padding: 0;
     font-size: 16px;
     font-family: $font-opensans;
+    transition: background 0.2s linear;
 }
 
 p  { margin: 0; }
