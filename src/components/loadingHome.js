@@ -1,5 +1,4 @@
 import React from 'react'
-import imgHome from '../assets/img/img-home.jpg'
 import { LogoLoading } from './logo'
 
 const LoadingHome = () => {

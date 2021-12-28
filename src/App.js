@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './assets/style/index.scss';
-import LoadingHome from './components/loadingHome';
+import LoadingHome from './Components/loadingHome';
+import Router from './Routes/router';
 
 function App() {
   return (
     <div className="App">
+      <Router />
       <LoadingHome />
     </div>
   );
