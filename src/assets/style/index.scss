@@ -8,7 +8,11 @@
 @import './layout/darkmark';
 @import './layout/logo';
 @import './layout/icon';
+@import './layout/loader';
+
 
 // module
 @import './module/cookie';
 @import './module/loading-home';
+@import './module/register';
+@import './module/loginAndForgetPassword';

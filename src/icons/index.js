@@ -1,7 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhotoVideo } from '@fortawesome/free-solid-svg-icons'
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { 
+    faMoon, 
+    faSun,
+    faTimes
+} from '@fortawesome/free-solid-svg-icons'
 
 export const IconLogo = () => {
     return <FontAwesomeIcon icon={faPhotoVideo} className='logo__icon'/>
@@ -23,3 +27,11 @@ export const Sun = () => {
     )
 }
 
+
+export const Times = () => {
+    return (
+        <div className='fa-times'>
+            <FontAwesomeIcon icon={faTimes}/>
+        </div>
+    )
+}

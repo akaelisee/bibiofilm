@@ -4,3 +4,200 @@
     border: none;
     width: $width;
 }
+
+@mixin modal {
+    .modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(56, 56, 56, 0.829);
+        z-index: 10;
+        // visibility: hidden;
+        // opacity: 0;
+        // transition: visibility 0.5s, opacity 0.5s;
+        .modal-content {
+            position: relative;
+            width: 580px;
+            padding: 20px 40px 40px;
+            background-color: #fff;
+            border-radius: 18px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .modal-header {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+                .btn-close {
+                    position: absolute;
+                    top: 50%;
+                    left: -10px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                    svg {
+                        font-size: 25px;
+                        transition: 0.2s ease-in;
+                        &:hover {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+            .modal-body {
+                position: relative;
+                height: 60vh;
+                .modal-text {
+                    font-size: 25px;
+                    font-weight: 600;
+                }
+                .modal-form {
+                    display: block;
+                    .form {
+                        margin: 30px 0 0px;
+                        padding: 0 0 30px;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+
+                        &__input {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          border: 2px solid $color-black;
+                          border-radius: 10px;
+                          font-size: 15px;
+                          color: $color-black;
+                          outline: none;
+                          padding: 30px 20px 15px 20px;
+                          background: none;
+                          &:focus {
+                            border-color: $color-red;
+                          }
+                        }
+
+                        &__label {
+                            position: absolute;
+                            left: 1rem;
+                            top: 0.8rem;
+                            padding: 0 0.5rem;
+                            transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+                        }
+                    }  
+                    .form__input:focus ~ .form__label,
+                      .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+                        top: 2px;
+                        font-size: 0.8rem;
+                        left: 0.8rem;
+                        color: $color-red;
+                    }
+                }
+            }
+            .mdp-forget {
+                text-align: center;
+                border-radius: 15px;
+                padding: 8px 0;
+                cursor: pointer;
+                
+                span, a {
+                    text-decoration: none;
+                    color: $color-black;
+                    position: relative;
+                    font-size: 17px;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        background-color: $color-black;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(175, 175, 175, 0.615);
+                    transition: 0.4s ease;
+                }
+            }
+
+            .btn-link {
+                text-align: center;
+                border-radius: 15px;
+                padding: 8px 0;
+                cursor: pointer;
+                background-color: $color-red;
+                
+                a {
+                    color: $color-white;
+                    text-decoration: none;
+                    position: relative;
+                    font-size: 17px;
+                }
+
+                &:hover {
+                    background-color: $color-red-rgb;
+                    transition: 0.4s ease;
+                }
+            }
+        }
+    }
+    .modal-active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    @media only screen and (max-width: 590px) {
+        .login {
+            .modal {
+                justify-content: space-between;
+                align-items: flex-start;
+                background-color: transparent;
+                .modal-content {
+                    width: 100%;
+                    padding: 20px 40px 30px;
+                    height: 100vh;
+        
+                    .modal-header {
+                        margin-bottom: 10px;
+                    }
+                    .modal-body {
+                        position: relative;
+                        .modal-text {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+            .modal-active {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 434px) {
+       .form {
+        &__input {
+            font-size: 14px;
+            padding: 30px 10px 15px 10px !important;
+            background: none;
+          }
+        &__label {
+            position: absolute;
+            font-size: 13px;
+            left: 0.7rem !important;
+            top: 0.8rem;
+            padding: 0 !important;
+        }
+       }
+    }
+}

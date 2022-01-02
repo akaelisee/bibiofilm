@@ -1,6 +1,6 @@
 import React from 'react'
-import Cookie from '../Components/cookie'
-import DarkLight from '../Components/darkLight'
+// import Cookie from '../Components/cookie'
+// import DarkLight from '../Components/darkLight'
 
 const Home = () => {
 
@@ -8,8 +8,8 @@ const Home = () => {
         <div>
             Home
            <p> lorem ispm </p> 
-            <DarkLight />
-            <Cookie />
+            {/* <DarkLight />
+            <Cookie /> */}
         </div>
     )
 }
