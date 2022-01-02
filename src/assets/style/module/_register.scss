@@ -1,0 +1,202 @@
+.register {
+    position: relative;
+    display: flex;
+    
+    .register-left {
+        background-image: url(../../img/avenger.png);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 80%;
+        height: 100vh;
+    }
+    .register-right {
+        width: 1500px;
+        padding: 40px;
+        svg {
+            font-size: 50px;
+            color: $color-red;
+        }
+
+        .register-text {
+            margin: 40px 0 20px;
+            line-height: 65px;
+            h1 {
+                font-size: 60px;
+            }
+            
+            p {
+                margin: 15px 0;
+                font-size: 35px;
+                font-weight: 600;
+            }
+        }
+        .btn-register {
+            margin: 5px 0;
+            width: 350px;
+            text-align: center;
+            .register-google {
+                display: flex;
+                justify-content: center;
+                border: 1px solid #aaa;
+                border-radius: 50px;
+                padding: 8px 0;
+                cursor: pointer;
+
+                img {
+                    width: 25px;
+                }
+
+                span {
+                    align-self: center;
+                    font-size: 16px;
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    background-color: rgb(236, 236, 236);
+                    transition: all 0.4s ease;
+                }
+            }
+            .register-email {
+                margin-top: 5px;
+                border: 1px solid;
+                border-radius: 50px;
+                padding: 9px 0;
+                font-weight: 600;
+                cursor: pointer;
+                color: $color-white;
+                background-color: $color-red;
+                transition: all 0.4s ease;
+
+                &:hover {
+                    background-color: rgba(231, 77, 60, 0.714);
+                }
+            }
+            .hr {
+                position: relative;
+                margin: 6px 0;
+                font-size: 18px;
+
+                &::after, &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    background-color: $color-bar;
+                    width: 45%;
+                    height: 2px;
+                }
+                &::after {
+                    left: 0;
+                }
+                &::before {
+                    right: 0;
+                }
+            }
+            .condition {
+                margin: 10px 0;
+                text-align: justify;
+                font-size: 13px;
+            }
+
+            .text {
+                margin: 25px 0 10px;
+                text-align: left;
+            }
+
+            .register-connexion {
+                margin-top: 10px;
+                border: 1px solid #aaa;
+                border-radius: 50px;
+                padding: 8px 0;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.4s ease;
+                a {
+                     color: $color-red;
+                     padding: 8px 125px;
+                 }
+                &:hover {
+                    background-color: rgba(231, 77, 60, 0.414);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px ) {
+    .register {
+        display: flex;
+        flex-direction: column-reverse;
+        
+        .register-left {
+            width: 100%;
+        }
+        .register-right {
+            width: 550px;
+            margin: 0 auto;
+    
+            .register-text {
+                p {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 580px ) {
+    .register {
+        display: flex;
+        flex-direction: column-reverse;
+        
+        .register-left {
+            display: none;
+        }
+        .register-right {
+            width: 80% !important;
+            margin: 40px auto;
+            padding: 0;
+
+            svg {
+                font-size: 40px;
+            }
+    
+            .register-text {
+                margin: 30px 0 10px;
+
+                h1 {
+                    font-size: 38px;
+                    line-height: 45px;
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+
+            .btn-register {
+                width: 290px;
+                .register-number {
+                    span {
+                        padding: 0;
+                    }
+                }
+                .condition {
+                    font-size: 12px;
+                }
+                .register-connexion {
+                    a {
+                        color: $color-red;
+                        padding: 8px 90px;
+                    }
+                }
+            }
+
+        }
+
+    }
+    
+}
