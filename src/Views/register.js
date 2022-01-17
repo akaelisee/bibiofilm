@@ -1,23 +1,42 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { IconLogo } from '../icons'
 import imgGoogle from '../assets/img/google.png'
 import { Link } from 'react-router-dom'
 import Loader from '../Components/loader'
 import SignUp from '../Components/signUp'
+import { FirebaseContext } from '../Firebase'
 
 const Register = () => {
 
-  const [isLoader, setIsLoader] = useState(false)
-  const [isModal, setIsModal] = useState(false)
+  const [isLoader, setIsLoader] = useState(false);
+  const [isModal, setIsModal] = useState(false);
+  const [error, setError] = useState('');
+  const firebaseGoogle = useContext(FirebaseContext);
+
+  const handleSubmitSignGoogle = (event) => {
+    event.preventDefault();
+    
+    firebaseGoogle.signInWithGoogle()
+    .then(res => {
+    })
+    .catch(error => {
+      setError(error);
+    })
+  };
 
   const displayRegister = () => {
     setIsLoader(true)
-
+    document.body.style.overflow = 'hidden'
     setTimeout(() => {
       setIsLoader(false)
       setIsModal(true);
     }, 1000);
   }
+
+  const BtnGoogle = <div className='register-google' onClick={handleSubmitSignGoogle}> 
+                        <img src={imgGoogle} alt='google'/>
+                        <span> Continuer avec Google </span>
+                      </div>
 
     return (
         <div className='register'>
@@ -37,12 +56,12 @@ const Register = () => {
               </h1>
               <p> Rejoignez BiblioFilm dès aujourd'hui. </p>
             </div>
+            
+            {error && <sapn style={{color: 'red'}}> {error.message} </sapn> }
 
             <div className='btn-register'>
-                <div className='register-google'> 
-                    <img src={imgGoogle} alt='google'/>
-                    <span> S'inscrire avec Google </span>
-                </div>
+
+                { BtnGoogle }
 
                 <div className='hr'> ou </div>
 
@@ -53,8 +72,8 @@ const Register = () => {
                 <div className='condition'>
                   En vous inscrivant, vous acceptez les 
                   <span style={{color: '#5e8bce'}}> Conditions d'Utilisation </span>  
-                  et la 
-                  <span style={{color: '#5e8bce'}}> 
+                  et la  
+                  <span style={{color: '#5e8bce'}}> {' '} 
                     Politique de Confidentialité
                   </span>.
                   incluant l'Utilisation de Cookies.
@@ -63,7 +82,7 @@ const Register = () => {
                 <p className='text'> Vous avez déjà un compte ? </p>
 
                 <div className='register-connexion'> 
-                   <Link to='/login'> Se connecté </Link>
+                   <Link to='/auth/login'> Se connecté </Link>
                 </div>
             </div>
           </div>

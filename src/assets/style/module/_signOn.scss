@@ -1,0 +1,15 @@
+.wrapper-modal {
+    position: relative;
+    @include modal;
+
+    .condition-pwd {
+        padding: 20px 10px 0;
+        font-size: 13px;
+
+        .condition-register {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+        }
+    }
+}

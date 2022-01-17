@@ -4,7 +4,10 @@ import { faPhotoVideo } from '@fortawesome/free-solid-svg-icons'
 import { 
     faMoon, 
     faSun,
-    faTimes
+    faTimes,
+    faEye,
+    faEyeSlash,
+    faCheck
 } from '@fortawesome/free-solid-svg-icons'
 
 export const IconLogo = () => {
@@ -32,6 +35,31 @@ export const Times = () => {
     return (
         <div className='fa-times'>
             <FontAwesomeIcon icon={faTimes}/>
+        </div>
+    )
+}
+
+export const Eye = () => {
+    return (
+        <div className='fa-eye'>
+            <FontAwesomeIcon icon={faEye}/>
+        </div>
+    )
+}
+
+export const EyeSlash = () => {
+    return (
+        <div className='fa-eye'>
+            <FontAwesomeIcon icon={faEyeSlash}/>
+        </div>
+    )
+}
+
+
+export const Check = () => {
+    return (
+        <div className='fa-check'>
+            <FontAwesomeIcon icon={faCheck}/>
         </div>
     )
 }

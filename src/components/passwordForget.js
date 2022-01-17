@@ -8,7 +8,7 @@ const PasswordForget = () => {
 
     return (
         <div className='wrapper-modal'>
-        <div className='modal'>
+          <div className='modal'>
             <div className='modal-content'>
               <div className='modal-header'>
                 <div className='btn-close' onClick={()=> navigate('/')}>
@@ -21,22 +21,23 @@ const PasswordForget = () => {
                    Recherchez votre compte BiblioFilm.
                 </p>
                 <form className='modal-form'>
-                  <div className='form'>
-                    <input 
-                      type="text" 
-                      id="email" 
-                      className="form__input"
-                      placeholder="" 
-                    />
-                    <label htmlFor='email' className="form__label"> 
-                      Entrez votre addresse mail
-                    </label>
+                  <div className='first-modal'>
+                    <div className='form'>
+                      <input 
+                        type="text" 
+                        id="email" 
+                        className="form__input"
+                        placeholder="" 
+                      />
+                      <label htmlFor='email' className="form__label"> 
+                        Entrez votre addresse mail
+                      </label>
+                    </div>
+                  </div>
+                  <div className='mdp-forget'>
+                    <span>Recheche</span>
                   </div>
                 </form>
-
-              </div>
-              <div className='mdp-forget'>
-                <span>Recheche</span>
               </div>
             </div>  
           </div>

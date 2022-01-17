@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AuthFirebase, { FirebaseContext } from './Firebase';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <FirebaseContext.Provider value={new AuthFirebase()}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
