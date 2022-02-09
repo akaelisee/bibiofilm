@@ -1,0 +1,62 @@
+.nav__aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    border-right: 2px solid $color-bar;
+    padding: 40px 0px 40px 40px;
+
+    &-logo {
+
+    }
+    
+    .menu {
+        margin-top: 25px;
+        line-height: 24px;
+
+        &__item {
+            margin: 35px 0;
+
+            span {
+                color: $color-nav;
+            }
+
+            &-ul {
+                margin: 25px 0;
+                
+                li {
+                    line-height: 40px;
+
+                    a {
+                        display: flex;
+                        color: $color-menu;
+
+                        svg {
+                            align-self: center;
+                            font-size: 22px;
+                            width: 35px;
+                        }
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
+
+                li.active {
+                    border-right: 5px solid  $color-red;
+                    a {
+                        svg {
+                            color: $color-red;
+                        }
+                        
+                        span {
+                            color: $color-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

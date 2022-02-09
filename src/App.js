@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   const PrivateRoute = ({connected, children }) => {
-    return connected ? <Content> {children} </Content>  : <Navigate to="/auth/register" />;
+    return !connected ? <Content> {children} </Content>  : <Navigate to="/auth/register" />;
   };
 
   const Auth = () => {

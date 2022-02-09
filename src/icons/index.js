@@ -7,7 +7,13 @@ import {
     faTimes,
     faEye,
     faEyeSlash,
-    faCheck
+    faCheck,
+    faHome,
+    faCity,
+    faCompass,
+    faCog,
+    faSignOutAlt,
+    faPlus,
 } from '@fortawesome/free-solid-svg-icons'
 
 export const IconLogo = () => {
